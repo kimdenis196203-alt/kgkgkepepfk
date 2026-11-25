@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.studentperformance.data.*
+import com.example.studentperformance.ui.screens.FigmaAnalyticsScreen
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -82,7 +83,7 @@ private fun StudentApp(repository: StudentRepository) {
                     when (tab) {
                         0 -> HomeScreen(disciplines, grades, onOpen = { selected = it })
                         1 -> GradesScreen(disciplines, grades, onOpen = { id -> selected = disciplines.find { it.id == id } })
-                        else -> AnalyticsScreen(disciplines, grades)
+                        else -> FigmaAnalyticsScreen(disciplines, grades)
                     }
                     Spacer(Modifier.weight(1f))
                     NavigationBar(containerColor = Color.White, tonalElevation = 0.dp) {
